@@ -7,9 +7,7 @@
 
 /*
 This program learns the sequence "sesa" using a Recurrent Neural Network.
-An Neural Network
 It is implemented using matrices.
-
 */
 
 /* parameters */
