@@ -141,28 +141,6 @@ void scalar_dot(int h, int w, long double m[h][w], long double n, long double ou
   }
 }
 
-void bakSoftmax(int h, long double m[h][1], long double output[h][1])
-{ //softmax of vector
-  long double max = 0;
-  long double exps_sum = 0;
-
-  //search max
-  for (int i = 0; i < h; i++)
-  {
-      if (m[i][0] > max)
-      {
-        max = m[i][0];
-      }
-  }
-  for (int i = 0; i < h; i++)
-  {
-    //substract max to all elements
-    output[i][0] = expf(m[i][0] - max); //compute e^x for each element x in the vector
-    exps_sum += output[i][0];
-  }
-  scalar_dot(h, 1, m, 1.0/exps_sum, output); //divide each element by the sum
-}
-
 void Softmax(int h, long double m[h][1], long double output[h][1])
 {
 long double max = -INFINITY;
@@ -447,10 +425,6 @@ int main()
       }
       printf("%s",charset[max_i]);
     }
-  //  printf("\n");
-  //  print(H(Wy), W(Wy), Wy);
-  //  printf("\n");
-  //  print(H(Ba), W(Ba), Ba);
 
   }
   return 0;
