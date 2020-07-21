@@ -365,7 +365,7 @@ int main()
       }
 
       //clip gradients
-      Vectorize(H(WhUpdate), W(WhUpdate), WhUpdate, clip, WhUpdate); //save Dsigmoid(Att[k+1]) in Att[k+1]; we can do that becaus we never use Att[k+1] again
+      Vectorize(H(WhUpdate), W(WhUpdate), WhUpdate, clip, WhUpdate);
       Vectorize(H(WxUpdate), W(WxUpdate), WxUpdate, clip, WxUpdate);
       Vectorize(H(BaUpdate), W(BaUpdate), BaUpdate, clip, BaUpdate);
       Vectorize(H(WyUpdate), W(WyUpdate), WyUpdate, clip, WyUpdate);
